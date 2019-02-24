@@ -1,0 +1,141 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "맑은 고딕";
+}
+header {
+    padding: 8px 16px;
+    background-color: orange;
+}
+footer {
+    padding: 4px 8px;
+    background-color: orange;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 56px 56px 56px 56px 56px 56px 56px 56px 56px 56px;
+    grid-template-rows: 56px 56px 56px 56px 56px 56px 56px 56px 56px 56px;
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+    padding: 10px;
+}
+.grid-item {
+}
+#main #pad #mc1 {
+    grid-column: 2 / 2;
+}
+#main #pad #mc9 {
+    grid-row: 2 / 2;
+    grid-column: 10 / 10;
+}
+#main #pad #dummy1 {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+}
+#main #pad #dummy2 {
+    grid-column: 10 / 10;
+    grid-row: 1 / 1;
+}
+#main #pad #dummy3 {
+    grid-column: 10 / 10;
+    grid-row: 10 / 10;
+}
+#main #pad #dummy4 {
+    grid-column: 1 / 1;
+    grid-row: 10 / 10;
+}
+#main #pad #mc10 {
+    grid-row: 3 / 3;
+    grid-column: 10 / 10;
+}
+#main #pad #mc11 {
+    grid-row: 4 / 4;
+    grid-column: 10 / 10;
+}
+#main #pad #mc12 {
+    grid-row: 5 / 5;
+    grid-column: 10 / 10;
+}
+#main #pad #mc13 {
+    grid-row: 6 / 6;
+    grid-column: 10 / 10;
+}
+#main #pad #mc14 {
+    grid-row: 7 / 7;
+    grid-column: 10 / 10;
+}
+#main #pad #mc15 {
+    grid-row: 8 / 8;
+    grid-column: 10 / 10;
+}
+#main #pad #mc16 {
+    grid-row: 9 / 9;
+    grid-column: 10 / 10;
+}
+#main #pad #mc17 {
+    grid-row: 10 / 10;
+    grid-column: 9 / 9;
+}
+#main #pad #mc18 {
+    grid-row: 10 / 10;
+    grid-column: 8 / 8;
+}
+#main #pad #mc19 {
+    grid-row: 10 / 10;
+    grid-column: 7 / 7;
+}
+#main #pad #mc20 {
+    grid-row: 10 / 10;
+    grid-column: 6 / 6;
+}
+#main #pad #mc21 {
+    grid-row: 10 / 10;
+    grid-column: 5 / 5;
+}
+#main #pad #mc22 {
+    grid-row: 10 / 10;
+    grid-column: 4 / 4;
+}
+#main #pad #mc23 {
+    grid-row: 10 / 10;
+    grid-column: 3 / 3;
+}
+#main #pad #mc24 {
+    grid-row: 10 / 10;
+    grid-column: 2 / 2;
+}
+#main #pad #mc25 {
+    grid-row: 9 / 9;
+    grid-column: 1 / 1;
+}
+#main #pad #mc26 {
+    grid-row: 8 / 8;
+    grid-column: 1 / 1;
+}
+#main #pad #mc27 {
+    grid-row: 7 / 7;
+    grid-column: 1 / 1;
+}
+#main #pad #mc28 {
+    grid-row: 6 / 6;
+    grid-column: 1 / 1;
+}
+#main #pad #mc29 {
+    grid-row: 5 / 5;
+    grid-column: 1 / 1;
+}
+#main #pad #mc30 {
+    grid-row: 4 / 4;
+    grid-column: 1 / 1;
+}
+#main #pad #mc31 {
+    grid-row: 3 / 3;
+    grid-column: 1 / 1;
+}
+#main #pad #mc32 {
+    grid-row: 2 / 2;
+    grid-column: 1 / 1;
+}
