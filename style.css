@@ -15,7 +15,7 @@ footer {
     background-color: orange;
 }
 .grid-container {
-    display: grid;
+    display: inline-grid;
     grid-template-columns: 56px 56px 56px 56px 56px 56px 56px 56px 56px 56px;
     grid-template-rows: 56px 56px 56px 56px 56px 56px 56px 56px 56px 56px;
     grid-column-gap: 6px;
@@ -138,4 +138,14 @@ footer {
 #main #pad #mc32 {
     grid-row: 2 / 2;
     grid-column: 1 / 1;
+}
+#sidebar {
+	display: inline-block;
+}.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+#sidebar {
+    padding: 8px;
+    flex-grow: 1;
 }
