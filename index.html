@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
+<link href="mobile.css" rel="stylesheet" type="text/css">
 <title>UniMake Web</title>
 </head>
 
@@ -45,8 +46,8 @@
     <button class="grid-item" id="mc30"></button>
     <button class="grid-item" id="mc31"></button>
     <button class="grid-item" id="mc32"></button>
-    <button class="grid-item" id="u11"></button>
-    <button class="grid-item" id="u12"></button>
+    <button class="grid-item launch-btn" id="u11"></button>
+    <button class="grid-item launch-btn" id="u12"></button>
     <button class="grid-item" id="u13"></button>
     <button class="grid-item" id="u14"></button>
     <button class="grid-item" id="u15"></button>
@@ -62,38 +63,65 @@
     <button class="grid-item" id="u27"></button>
     <button class="grid-item" id="u28"></button>
     <button class="grid-item" id="u31"></button>
+    <button class="grid-item" id="u32"></button>
+    <button class="grid-item" id="u33"></button>
+    <button class="grid-item" id="u34"></button>
+    <button class="grid-item" id="u35"></button>
     <div class="grid-item" id="dummy1"></div>
     <div class="grid-item" id="dummy2"></div>
     <div class="grid-item" id="dummy3"></div>
     <div class="grid-item" id="dummy4"></div>
   </div>
   <div id="sidebar">
+    <button id="sounds-manager-open">Sounds Manager</button>
     <form method="post">
       <fieldset>
         <legend>Information</legend>
         <p class="inline">UniPack Name:</p>
         <input type="text" name="unipack_name">
-		<br>
-		<p class="inline">Author(s):</p>
-		<input type="text" name="author">
-		<br>
-		<p class="inline">ButtonX:</p>
-		<input type="number" name="ButtonX">
-		<br>
-		<p class="inline">ButtonY:</p>
-		<input type="number" name="ButtonY">
-		<br>
-		<p class="inline">Chain:</p>
-		<input type="number" name="Chain">
-		<br>
+        <br>
+        <p class="inline">Author(s):</p>
+        <input type="text" name="author">
+        <br>
+        <p class="inline">ButtonX:</p>
+        <input type="number" name="ButtonX">
+        <br>
+        <p class="inline">ButtonY:</p>
+        <input type="number" name="ButtonY">
+        <br>
+        <p class="inline">Chain:</p>
+        <input type="number" name="Chain">
+        <br>
         <input type="submit" value="Save">
       </fieldset>
     </form>
+    <fieldset>
+      <legend>sound</legend>
+      <li>여기에 li의 내용 입력</li>
+    </fieldset>
+  </div>
+</div>
+<div id="sounds-manager" class="modal">
+  <div class="modal-content">
+    <h3>Sounds Manager</h3>
+    <button id="sounds-manager-close">Close</button>
+    <form method="post" action="soundsListNewElement()">
+      <fieldset>
+        <legend>Add new</legend>
+        <input type="file">
+        <br>
+        <input type="submit" value="Add to list">
+      </fieldset>
+    </form>
+    <ul class="list">
+	  <li>test</li>
+	</ul>
   </div>
 </div>
 <footer>
   <p>Copyright &copy; 2019 UniMake Web. All rights reserved.</p>
   <p>Thank you UniPad!</p>
 </footer>
+<script src="script.js"></script>
 </body>
 </html>
