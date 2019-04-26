@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="w3.css" >
 <link rel="stylesheet" href="style.css">
 <link href="mobile.css" rel="stylesheet" type="text/css">
 <title>UniMake Web</title>
 </head>
 
 <body>
-<header>
+<header class="w3-container w3-orange">
   <h1>UniMake Web</h1>
 </header>
 <div class="flex-container" id="main">
@@ -73,52 +74,48 @@
     <div class="grid-item" id="dummy4"></div>
   </div>
   <div id="sidebar">
-    <button id="sounds-manager-open">Sounds Manager</button>
-    <form method="post">
-      <fieldset>
-        <legend>Information</legend>
-        <p class="inline">UniPack Name:</p>
-        <input type="text" name="unipack_name">
-        <br>
-        <p class="inline">Author(s):</p>
-        <input type="text" name="author">
-        <br>
-        <p class="inline">ButtonX:</p>
-        <input type="number" name="ButtonX">
-        <br>
-        <p class="inline">ButtonY:</p>
-        <input type="number" name="ButtonY">
-        <br>
-        <p class="inline">Chain:</p>
-        <input type="number" name="Chain">
-        <br>
-        <input type="submit" value="Save">
-      </fieldset>
-    </form>
+    <button id="sounds-manager-open" class="w3-btn w3-gray">Sounds Manager</button>
+    <fieldset>
+      <legend>Information</legend>
+      <label>UniPack Name:</label>
+      <input type="text" name="unipack_name" class="w3-input">
+      <br>
+      <label>Author(s):</label>
+      <input type="text" name="author" class="w3-input">
+      <br>
+      <label>ButtonX:</label>
+      <input type="number" name="ButtonX" class="w3-input">
+      <br>
+      <label>ButtonY:</label>
+      <input type="number" name="ButtonY" class="w3-input">
+      <br>
+      <label>Chain:</label>
+      <input type="number" name="Chain" class="w3-input">
+      <br>
+      <button class="w3-btn w3-green">Save</button>
+    </fieldset>
     <fieldset>
       <legend>sound</legend>
       <li>여기에 li의 내용 입력</li>
     </fieldset>
   </div>
 </div>
-<div id="sounds-manager" class="modal">
-  <div class="modal-content">
+<div id="sounds-manager" class="modal w3-modal">
+  <div class="w3-modal-content w3-container">
     <h3>Sounds Manager</h3>
-    <button id="sounds-manager-close">Close</button>
-    <form method="post" action="soundsListNewElement()">
-      <fieldset>
-        <legend>Add new</legend>
-        <input type="file">
-        <br>
-        <input type="submit" value="Add to list">
-      </fieldset>
-    </form>
+    <button id="sounds-manager-close" class="w3-btn w3-gray">Close</button>
+    <fieldset>
+      <legend>Add new</legend>
+      <input type="file">
+      <br>
+      <button class="w3-btn w3-blue">Add to List</button>
+    </fieldset>
     <ul class="list">
 	  <li>test</li>
 	</ul>
   </div>
 </div>
-<footer>
+<footer class="w3-container w3-orange">
   <p>Copyright &copy; 2019 UniMake Web. All rights reserved.</p>
   <p>Thank you UniPad!</p>
 </footer>
