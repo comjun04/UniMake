@@ -13,14 +13,22 @@ soundsManagerCloseBtn.onclick = function() {
 	soundsManagerModal.style.display = "none";
 }
 
-// sounds Manager List
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-	if(ev.target.tagName === 'LI') {
-		ev.target.classList.toggle('checked');
-	}
-}, false);
+// Information Edit Modal Box
+var packInfoModal = document.getElementById('packInfoModal');
+var packInfoOpenBtn = document.getElementById('packInfoModalOpen');
+var packInfoCloseBtn = document.getElementById('packInfoModalClose');
 
-function soundsListNewElement() {
-	var li = document.createElement("li");
+packInfoOpenBtn.onclick = function() {
+	packInfoModal.style.display = "block";
+}
+
+packInfoCloseBtn.onclick = function() {
+	packInfoModal.style.display = "none";
+}
+
+// soundList
+var soundListAddBtn = document.getElementById('soundListAddBtn');
+var soundListInputFile = document.getElementById('soundListInputFile');
+soundListAddBtn.onclick = function() {
+	
 }

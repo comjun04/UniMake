@@ -74,41 +74,52 @@
     <div class="grid-item" id="dummy4"></div>
   </div>
   <div id="sidebar">
+  	<button id="packInfoModalOpen" class="w3-btn w3-gray">Edit Pack Information</button>
     <button id="sounds-manager-open" class="w3-btn w3-gray">Sounds Manager</button>
     <fieldset>
-      <legend>Information</legend>
-      <label>UniPack Name:</label>
-      <input type="text" name="unipack_name" class="w3-input">
+      <legend>Mode</legend>
+      <input type="radio" name="mode" value="Performance Mode" class="w3-radio">
+      <label>Performance Mode</label>
       <br>
-      <label>Author(s):</label>
-      <input type="text" name="author" class="w3-input">
+      <input type="radio" name="mode" value="Sound Edit Mode" class="w3-radio">
+      <label>Sound Edit Mode</label>
       <br>
-      <label>ButtonX:</label>
-      <input type="number" name="ButtonX" class="w3-input">
-      <br>
-      <label>ButtonY:</label>
-      <input type="number" name="ButtonY" class="w3-input">
-      <br>
-      <label>Chain:</label>
-      <input type="number" name="Chain" class="w3-input">
-      <br>
-      <button class="w3-btn w3-green">Save</button>
-    </fieldset>
-    <fieldset>
-      <legend>sound</legend>
-      <li>여기에 li의 내용 입력</li>
+      <input type="radio" name="mode" value="LED Edit Mode" class="w3-radio">
+      <label>LED Edit Mode</label>
     </fieldset>
   </div>
 </div>
-<div id="sounds-manager" class="modal w3-modal">
+<div id="packInfoModal" class="w3-modal">
+	<div class="w3-modal-content w3-container">
+		<h3>Information</h3>
+		<button id="packInfoModalClose" class="w3-btn w3-gray">Close</button>
+		<p>UniPack Name:</p>
+		<input type="text" name="unipack_name" class="w3-input">
+		<br>
+		<label>Author(s):</label>
+		<input type="text" name="author" class="w3-input">
+		<br>
+		<label>ButtonX:</label>
+		<input type="number" name="ButtonX" class="w3-input">
+		<br>
+		<label>ButtonY:</label>
+		<input type="number" name="ButtonY" class="w3-input">
+		<br>
+		<label>Chain:</label>
+		<input type="number" name="Chain" class="w3-input">
+		<br>
+		<button class="w3-btn w3-green">Save</button>
+	</div>
+</div>
+<div id="sounds-manager" class="w3-modal">
   <div class="w3-modal-content w3-container">
     <h3>Sounds Manager</h3>
     <button id="sounds-manager-close" class="w3-btn w3-gray">Close</button>
     <fieldset>
       <legend>Add new</legend>
-      <input type="file">
+      <input type="file" id="soundListInputFile">
       <br>
-      <button class="w3-btn w3-blue">Add to List</button>
+      <button class="w3-btn w3-blue" id="soundListAddBtn">Add to List</button>
     </fieldset>
     <ul class="list">
 	  <li>test</li>
