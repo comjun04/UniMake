@@ -10,8 +10,25 @@
 </head>
 
 <body>
-<header class="w3-container w3-orange">
-  <h1>UniMake Web</h1>
+<nav id="sidebar" class="w3-sidebar w3-bar-block" style="display: none;">
+	<button class="w3-button w3-bar-item w3-xxlarge" onclick="sidebarClose()">&times; close</button>
+	<button class="w3-bar-item" onclick="packInfoOpen()">Edit Pack Information</button>
+	<button class="w3-bar-item" onclick="soundsManagerOpen()">Sounds Manager</button>
+	<fieldset>
+		<legend>Mode</legend>
+		<input type="radio" name="mode" value="Performance Mode" class="w3-radio">
+		<label>Performance Mode</label>
+		<br>
+		<input type="radio" name="mode" value="Sound Edit Mode" class="w3-radio">
+		<label>Sound Edit Mode</label>
+		<br>
+		<input type="radio" name="mode" value="LED Edit Mode" class="w3-radio">
+		<label>LED Edit Mode</label>
+	</fieldset>
+</nav>
+<header class="w3-orange w3-bar">
+	<button class="w3-button w3-orange w3-xxxlarge w3-bar-item" onclick="sidebarOpen()">☰</button>
+  	<h1 class="w3-bar-item">UniMake Web</h1>
 </header>
 <div class="flex-container" id="main">
   <div id="pad" class="grid-container">
@@ -73,9 +90,9 @@
     <div class="grid-item" id="dummy3"></div>
     <div class="grid-item" id="dummy4"></div>
   </div>
-  <div id="sidebar">
-  	<button id="packInfoModalOpen" class="w3-btn w3-gray">Edit Pack Information</button>
-    <button id="sounds-manager-open" class="w3-btn w3-gray">Sounds Manager</button>
+  <div id="aside" class="w3-container">
+  	<button class="w3-btn w3-gray" onclick="packInfoOpen()">Edit Pack Information</button>
+    <button class="w3-btn w3-gray" onclick="soundsManagerOpen()">Sounds Manager</button>
     <fieldset>
       <legend>Mode</legend>
       <input type="radio" name="mode" value="Performance Mode" class="w3-radio">
@@ -92,7 +109,7 @@
 <div id="packInfoModal" class="w3-modal">
 	<div class="w3-modal-content w3-container">
 		<h3>Information</h3>
-		<button id="packInfoModalClose" class="w3-btn w3-gray">Close</button>
+		<button class="w3-btn w3-gray" onclick="packInfoClose()">Close</button>
 		<p>UniPack Name:</p>
 		<input type="text" name="unipack_name" class="w3-input">
 		<br>
@@ -114,7 +131,7 @@
 <div id="sounds-manager" class="w3-modal">
   <div class="w3-modal-content w3-container">
     <h3>Sounds Manager</h3>
-    <button id="sounds-manager-close" class="w3-btn w3-gray">Close</button>
+    <button class="w3-btn w3-gray" onclick="soundsManagerClose()">Close</button>
     <fieldset>
       <legend>Add new</legend>
       <input type="file" id="soundListInputFile">

@@ -1,28 +1,34 @@
 // JavaScript Document
 
+// Sidebar
+function sidebarOpen() {
+	let obj = document.getElementById('sidebar');
+	obj.style.width = '100%';
+	obj.style.display = 'block';
+}
+function sidebarClose() {
+	document.getElementById('sidebar').style.display = 'none';
+}
+
 // sounds Manager Modal Box
 var soundsManagerModal = document.getElementById('sounds-manager');
-var soundsManagerOpenBtn = document.getElementById('sounds-manager-open');
-var soundsManagerCloseBtn = document.getElementById('sounds-manager-close');
 
-soundsManagerOpenBtn.onclick = function() {
+function soundsManagerOpen() {
 	soundsManagerModal.style.display = "block";
 }
 
-soundsManagerCloseBtn.onclick = function() {
+function soundsManagerClose() {
 	soundsManagerModal.style.display = "none";
 }
 
 // Information Edit Modal Box
 var packInfoModal = document.getElementById('packInfoModal');
-var packInfoOpenBtn = document.getElementById('packInfoModalOpen');
-var packInfoCloseBtn = document.getElementById('packInfoModalClose');
 
-packInfoOpenBtn.onclick = function() {
+function packInfoOpen() {
 	packInfoModal.style.display = "block";
 }
 
-packInfoCloseBtn.onclick = function() {
+function packInfoClose() {
 	packInfoModal.style.display = "none";
 }
 

@@ -136,8 +136,7 @@ body {
     display: flex;
     flex-direction: row;
 }
-#sidebar {
-    padding: 8px;
+#aside {
     flex-grow: 1;
 }
 .inline {
