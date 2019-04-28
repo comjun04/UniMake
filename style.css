@@ -131,7 +131,10 @@ body {
     grid-column: 1 / 1;
 }
 #sidebar {
-	display: inline-block;
+	// display: inline-block;
+	transition: width 0.5s;
+	width: 0;
+	overflow: hidden;
 }.flex-container {
     display: flex;
     flex-direction: row;

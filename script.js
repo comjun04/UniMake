@@ -4,10 +4,10 @@
 function sidebarOpen() {
 	let obj = document.getElementById('sidebar');
 	obj.style.width = '100%';
-	obj.style.display = 'block';
+	// obj.style.display = 'block';
 }
 function sidebarClose() {
-	document.getElementById('sidebar').style.display = 'none';
+	document.getElementById('sidebar').style.width = 0;
 }
 
 // sounds Manager Modal Box
