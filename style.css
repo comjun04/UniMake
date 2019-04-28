@@ -152,3 +152,9 @@ body {
 }
 #u35 {
 }
+#sidebarOpen {
+	display: none;
+}
+[id*=mc] {
+	border-radius: 32px;
+}

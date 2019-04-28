@@ -1,5 +1,26 @@
 @charset "utf-8";
 
-@media screen and (max-width: 600px){
-	
+@media screen and (max-width: 600px) {
+	#aside {
+		display: none;
+	}
+	#sidebarOpen {
+		display: block;
+	}
+	.grid-container {
+		width: 100%;
+		box-sizing: border-box;
+		grid-template-columns: 10% 10% 10% 10% 10% 10% 10%;
+		grid-template-rows: ;
+	}
+
+	/*[id*=mc], [id*=u] {
+		position: relative;
+		box-sizing: border-box;
+	}
+	[id*=mc]:before, [id*=u]:before {
+		content: '';
+		display: block;
+		padding-top: 100%;
+	}*/
 }
