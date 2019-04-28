@@ -10,17 +10,11 @@
 	.grid-container {
 		width: 100%;
 		box-sizing: border-box;
-		grid-template-columns: 10% 10% 10% 10% 10% 10% 10%;
-		grid-template-rows: ;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-gap: 5px;
 	}
-
-	/*[id*=mc], [id*=u] {
-		position: relative;
-		box-sizing: border-box;
-	}
-	[id*=mc]:before, [id*=u]:before {
-		content: '';
-		display: block;
+	.grid-item {
 		padding-top: 100%;
-	}*/
+	}
 }
