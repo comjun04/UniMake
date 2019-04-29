@@ -32,7 +32,7 @@
 </header>
 <div class="flex-container" id="main">
   <div id="pad" class="grid-container">
-    <button class="grid-item" id="mc1"></button>
+    <button class="grid-item w3-button w3-gray" id="mc1" onclick="buttonSoundsModalOpen(1, 0)"></button>
     <button class="grid-item" id="mc2"></button>
     <button class="grid-item" id="mc3"></button>
     <button class="grid-item" id="mc4"></button>
@@ -64,7 +64,7 @@
     <button class="grid-item" id="mc30"></button>
     <button class="grid-item" id="mc31"></button>
     <button class="grid-item" id="mc32"></button>
-    <button class="grid-item launch-btn" id="u11"></button>
+    <button class="grid-item launch-btn w3-button w3-gray" id="u11" onclick="buttonSoundsModalOpen(1, 1)"></button>
     <button class="grid-item launch-btn" id="u12"></button>
     <button class="grid-item" id="u13"></button>
     <button class="grid-item" id="u14"></button>
@@ -125,7 +125,7 @@
 		<label>Chain:</label>
 		<input type="number" name="Chain" class="w3-input">
 		<br>
-		<button class="w3-btn w3-green">Save</button>
+		<button class="w3-btn w3-green w3-margin-bottom">Save</button>
 	</div>
 </div>
 <div id="sounds-manager" class="w3-modal">
@@ -136,12 +136,28 @@
       <legend>Add new</legend>
       <input type="file" id="soundListInputFile">
       <br>
-      <button class="w3-btn w3-blue" id="soundListAddBtn">Add to List</button>
+      <button class="w3-btn w3-blue w3-margin-top" id="soundListAddBtn">Add to List</button>
     </fieldset>
     <ul class="list">
 	  <li>test</li>
 	</ul>
   </div>
+</div>
+<div id="buttonSoundsModal" class="w3-modal">
+	<div class="w3-modal-content w3-container">
+		<h3 id="buttonSoundsTitle">(button-pos) - Sounds</h3>
+		<button class="w3-btn w3-gray" onclick="buttonSoundsModalClose()">Close</button>
+		<fieldset>
+			<legend>Add New</legend>
+			<select name="music" class="w3-margin">
+			</select>
+			<br>
+			<button class="w3-button w3-blue">Add</button>
+		</fieldset>
+		<ul>
+			<li>test</li>
+		</ul>
+	</div>
 </div>
 <footer class="w3-container w3-orange">
   <p>Copyright &copy; 2019 UniMake Web. All rights reserved.</p>
