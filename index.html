@@ -11,29 +11,29 @@
 
 <body>
 <nav id="sidebar" class="w3-sidebar w3-bar-block">
-	<button class="w3-button w3-bar-item w3-xxlarge" onclick="sidebarClose()">&times; close</button>
-	<button class="w3-bar-item" onclick="packInfoOpen()">Edit Pack Information</button>
-	<button class="w3-bar-item" onclick="soundsManagerOpen()">Sounds Manager</button>
-	<fieldset>
-		<legend>Mode</legend>
-		<input type="radio" name="mode" value="Performance Mode" class="w3-radio">
-		<label>Performance Mode</label>
-		<br>
-		<input type="radio" name="mode" value="Sound Edit Mode" class="w3-radio">
-		<label>Sound Edit Mode</label>
-		<br>
-		<input type="radio" name="mode" value="LED Edit Mode" class="w3-radio">
-		<label>LED Edit Mode</label>
-	</fieldset>
+  <button class="w3-button w3-bar-item w3-xxlarge" onclick="sidebarClose()">&times; close</button>
+  <button class="w3-bar-item" onclick="packInfoOpen()">Edit Pack Information</button>
+  <button class="w3-bar-item" onclick="soundsManagerOpen()">Sounds Manager</button>
+  <fieldset>
+    <legend>Mode</legend>
+    <input type="radio" name="mode" value="Performance Mode" class="w3-radio">
+    <label>Performance Mode</label>
+    <br>
+    <input type="radio" name="mode" value="Sound Edit Mode" class="w3-radio">
+    <label>Sound Edit Mode</label>
+    <br>
+    <input type="radio" name="mode" value="LED Edit Mode" class="w3-radio">
+    <label>LED Edit Mode</label>
+  </fieldset>
 </nav>
 <header class="w3-orange w3-bar">
-	<button id="sidebarOpen" class="w3-button w3-orange w3-xxxlarge w3-bar-item" onclick="sidebarOpen()">☰</button>
-  	<h1 class="w3-bar-item">UniMake Web</h1>
+  <button id="sidebarOpen" class="w3-button w3-orange w3-xxxlarge w3-bar-item" onclick="sidebarOpen()">☰</button>
+  <h1 class="w3-bar-item">UniMake Web</h1>
 </header>
 <div class="flex-container" id="main">
   <div id="pad" class="grid-container">
     <button class="grid-item w3-button w3-gray" id="mc1" onclick="buttonSoundsModalOpen(1, 0)"></button>
-    <button class="grid-item" id="mc2"></button>
+    <button class="grid-item w3-button w3-gray" id="mc2"></button>
     <button class="grid-item" id="mc3"></button>
     <button class="grid-item" id="mc4"></button>
     <button class="grid-item" id="mc5"></button>
@@ -64,9 +64,9 @@
     <button class="grid-item" id="mc30"></button>
     <button class="grid-item" id="mc31"></button>
     <button class="grid-item" id="mc32"></button>
-    <button class="grid-item launch-btn w3-button w3-gray" id="u11" onclick="buttonSoundsModalOpen(1, 1)"></button>
-    <button class="grid-item launch-btn" id="u12"></button>
-    <button class="grid-item" id="u13"></button>
+    <button class="grid-item w3-button w3-gray" id="u11" onclick="buttonSoundsModalOpen(1, 1)"></button>
+    <button class="grid-item w3-button w3-gray" id="u12"></button>
+    <button class="grid-item w3-button w3-gray" id="u13"></button>
     <button class="grid-item" id="u14"></button>
     <button class="grid-item" id="u15"></button>
     <button class="grid-item" id="u16"></button>
@@ -91,7 +91,7 @@
     <div class="grid-item" id="dummy4"></div>
   </div>
   <div id="aside" class="w3-container">
-  	<button class="w3-btn w3-gray" onclick="packInfoOpen()">Edit Pack Information</button>
+    <button class="w3-btn w3-gray" onclick="packInfoOpen()">Edit Pack Information</button>
     <button class="w3-btn w3-gray" onclick="soundsManagerOpen()">Sounds Manager</button>
     <fieldset>
       <legend>Mode</legend>
@@ -107,26 +107,26 @@
   </div>
 </div>
 <div id="packInfoModal" class="w3-modal">
-	<div class="w3-modal-content w3-container">
-		<h3>Information</h3>
-		<button class="w3-btn w3-gray" onclick="packInfoClose()">Close</button>
-		<p>UniPack Name:</p>
-		<input type="text" name="unipack_name" class="w3-input">
-		<br>
-		<label>Author(s):</label>
-		<input type="text" name="author" class="w3-input">
-		<br>
-		<label>ButtonX:</label>
-		<input type="number" name="ButtonX" class="w3-input">
-		<br>
-		<label>ButtonY:</label>
-		<input type="number" name="ButtonY" class="w3-input">
-		<br>
-		<label>Chain:</label>
-		<input type="number" name="Chain" class="w3-input">
-		<br>
-		<button class="w3-btn w3-green w3-margin-bottom">Save</button>
-	</div>
+  <div class="w3-modal-content w3-container">
+    <h3>Information</h3>
+    <button class="w3-btn w3-gray" onclick="packInfoClose()">Close</button>
+    <p>UniPack Name:</p>
+    <input type="text" id="unipack_name" class="w3-input">
+    <br>
+    <label>Author(s):</label>
+    <input type="text" id="unipack_author" class="w3-input">
+    <br>
+    <label>ButtonX:</label>
+    <input type="number" id="ButtonX" class="w3-input">
+    <br>
+    <label>ButtonY:</label>
+    <input type="number" id="ButtonY" class="w3-input">
+    <br>
+    <label>Chain:</label>
+    <input type="number" id="Chain" class="w3-input">
+    <br>
+    <button id="packInfoSave" class="w3-btn w3-green w3-margin-bottom">Save</button>
+  </div>
 </div>
 <div id="sounds-manager" class="w3-modal">
   <div class="w3-modal-content w3-container">
@@ -139,30 +139,32 @@
       <button class="w3-btn w3-blue w3-margin-top" id="soundListAddBtn">Add to List</button>
     </fieldset>
     <ul class="list">
-	  <li>test</li>
-	</ul>
+      <li>test</li>
+    </ul>
   </div>
 </div>
 <div id="buttonSoundsModal" class="w3-modal">
-	<div class="w3-modal-content w3-container">
-		<h3 id="buttonSoundsTitle">(button-pos) - Sounds</h3>
-		<button class="w3-btn w3-gray" onclick="buttonSoundsModalClose()">Close</button>
-		<fieldset>
-			<legend>Add New</legend>
-			<select name="music" class="w3-margin">
-			</select>
-			<br>
-			<button class="w3-button w3-blue">Add</button>
-		</fieldset>
-		<ul>
-			<li>test</li>
-		</ul>
-	</div>
+  <div class="w3-modal-content w3-container">
+    <h3 id="buttonSoundsTitle">(button-pos) - Sounds</h3>
+    <button class="w3-btn w3-gray" onclick="buttonSoundsModalClose()">Close</button>
+    <fieldset>
+      <legend>Add New</legend>
+      <select name="music" class="w3-margin">
+      </select>
+      <br>
+      <button class="w3-button w3-blue">Add</button>
+    </fieldset>
+    <ul>
+      <li>test</li>
+    </ul>
+  </div>
 </div>
 <footer class="w3-container w3-orange">
   <p>Copyright &copy; 2019 UniMake Web. All rights reserved.</p>
   <p>Thank you UniPad!</p>
 </footer>
 <script src="script.js"></script>
+<script src="modal.js"></script>
+<script src="db.js"></script>
 </body>
 </html>

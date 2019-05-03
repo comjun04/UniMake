@@ -129,11 +129,12 @@ body {
     grid-column: 1 / 1;
 }
 #sidebar {
-	// display: inline-block;
-	transition: width 0.5s;
-	width: 0;
-	overflow: hidden;
-}.flex-container {
+ // display: inline-block;
+    transition: width 0.5s;
+    width: 0;
+    overflow: hidden;
+}
+.flex-container {
     display: flex;
     flex-direction: row;
 }
@@ -154,8 +155,8 @@ body {
 #u35 {
 }
 #sidebarOpen {
-	display: none;
+    display: none;
 }
 [id*=mc] {
-	border-radius: 32px;
+    border-radius: 32px;
 }
