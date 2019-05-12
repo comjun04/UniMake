@@ -71,6 +71,7 @@ function loadPack(e) {
 	}
 	
 	cursor.onerror = function(e) {
+	alert('cursor error')
 		console.log("Error",e.target.error.name);
 	}
 }
@@ -94,11 +95,15 @@ function updatePackInfo(e) {
 	request = store.put(pack_chain, 'Chain');
 	
 	request.onerror = function(e) {
+	alert('request error');
 		console.log("Error",e.target.error.name);
-		//some type of error handler
+		//document.querySelector('#packInfoSaveError').value = "An Error occured: " + e.target.error;
+		document.getElementById('packInfoSaveError').style.display = "block";
 	}
 	
 	request.onsuccess = function(e) {
 	console.log("Woot! Did it");
+	document.getElementById('packInfoSaveSuccess').style.display = "block";
+	document.getElementById('packInfoModal').style.display = "none";
 	}
 }

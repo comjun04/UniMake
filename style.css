@@ -160,3 +160,10 @@ body {
 [id*=mc] {
     border-radius: 32px;
 }
+.bottom-notify {
+	display: none;
+	z-index: 4;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}

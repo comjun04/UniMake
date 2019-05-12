@@ -107,7 +107,7 @@
   </div>
 </div>
 <div id="packInfoModal" class="w3-modal">
-  <div class="w3-modal-content w3-container">
+  <div class="w3-modal-content w3-container w3-animate-top">
     <h3>Information</h3>
     <button class="w3-btn w3-gray" onclick="packInfoClose()">Close</button>
     <p>UniPack Name:</p>
@@ -127,6 +127,14 @@
     <br>
     <button id="packInfoSave" class="w3-btn w3-green w3-margin-bottom">Save</button>
   </div>
+</div>
+<div id="packInfoSaveSuccess" class="w3-container w3-green w3-animate-bottom w3-display-container bottom-notify">
+	<span class="w3-display-topright w3-button w3-xlarge" onclick="this.parentElement.style.display = 'none'">&times;</span>
+	<p>UniPack information was saved.</p>
+</div>
+<div id="packInfoSaveError" class="w3-container w3-red w3-animate-bottom w3-display-container bottom-notify">
+	<span class="w3-display-topright w3-button w3-xlarge">&times;</span>
+	<p>An Error occured: (ErrorName)</p>
 </div>
 <div id="sounds-manager" class="w3-modal">
   <div class="w3-modal-content w3-container">
