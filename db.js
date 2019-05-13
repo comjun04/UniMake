@@ -1,3 +1,5 @@
+'use strict';
+
 function idbSupported() {
 	return "indexedDB" in window;
 }
@@ -71,8 +73,9 @@ function loadPack(e) {
 	}
 	
 	cursor.onerror = function(e) {
-	alert('cursor error')
+		alert('cursor error')
 		console.log("Error",e.target.error.name);
+		notifyError(e.target.error);
 	}
 }
 
@@ -85,25 +88,31 @@ function updatePackInfo(e) {
 	
 	console.log("About to add "+pack_name+"/"+pack_author+"/"+pack_buttonX+"/"+pack_buttonY+"/"+pack_chain);
 	
-	var transaction = db.transaction(["info"], "readwrite");
-	var store = transaction.objectStore("info");
-	
-	var request = store.put(pack_name, 'Name');
-	request = store.put(pack_author, 'Author');
-	request = store.put(pack_buttonX, 'ButtonX');
-	request = store.put(pack_buttonY, 'ButtonY');
-	request = store.put(pack_chain, 'Chain');
-	
-	request.onerror = function(e) {
-	alert('request error');
-		console.log("Error",e.target.error.name);
-		//document.querySelector('#packInfoSaveError').value = "An Error occured: " + e.target.error;
-		document.getElementById('packInfoSaveError').style.display = "block";
-	}
-	
-	request.onsuccess = function(e) {
-	console.log("Woot! Did it");
-	document.getElementById('packInfoSaveSuccess').style.display = "block";
-	document.getElementById('packInfoModal').style.display = "none";
+	try {
+		var transaction = db.transaction(["info"], "readwrite");
+		var store = transaction.objectStore("info");
+		
+		var request = store.put(pack_name, 'Name');
+		request = store.put(pack_author, 'Author');
+		request = store.put(pack_buttonX, 'ButtonX');
+		request = store.put(pack_buttonY, 'ButtonY');
+		request = store.put(pack_chain, 'Chain');
+
+		request.onerror = function(e) {
+			alert('request error');
+			console.log("Error",e.target.error.name);
+			//document.querySelector('#packInfoSaveError').value = "An Error occured: " + e.target.error;
+			//document.getElementById('packInfoSaveError').style.display = "block";
+			notifyError(e.target.error);
+		}
+		
+		request.onsuccess = function(e) {
+			console.log("Woot! Did it");
+			document.getElementById('packInfoModal').style.display = "none";
+			notifyInfo("UniPack information was saved.");
+		}
+	} catch(error) {
+		console.error("Error: " + error)
+		notifyError(error.name + ": " + error.message);
 	}
 }
