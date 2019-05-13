@@ -1,4 +1,20 @@
 @charset "utf-8";
 
-@media (max-width: 560px){
+@media screen and (max-width: 600px) {
+	#aside {
+		display: none;
+	}
+	#sidebarOpen {
+		display: block;
+	}
+	.grid-container {
+		width: 100%;
+		box-sizing: border-box;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-gap: 5px;
+	}
+	.grid-item {
+		padding-top: 100%;
+	}
 }

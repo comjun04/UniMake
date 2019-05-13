@@ -4,15 +4,6 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: "맑은 고딕";
-}
-header {
-    padding: 8px 16px;
-    background-color: orange;
-}
-footer {
-    padding: 4px 8px;
-    background-color: orange;
 }
 .grid-container {
     display: inline-grid;
@@ -21,8 +12,6 @@ footer {
     grid-column-gap: 6px;
     grid-row-gap: 6px;
     padding: 10px;
-}
-.grid-item {
 }
 #main #pad #mc1 {
     grid-column: 2 / 2;
@@ -140,13 +129,16 @@ footer {
     grid-column: 1 / 1;
 }
 #sidebar {
-	display: inline-block;
-}.flex-container {
+ // display: inline-block;
+    transition: width 0.5s;
+    width: 0;
+    overflow: hidden;
+}
+.flex-container {
     display: flex;
     flex-direction: row;
 }
-#sidebar {
-    padding: 8px;
+#aside {
     flex-grow: 1;
 }
 .inline {
@@ -162,46 +154,16 @@ footer {
 }
 #u35 {
 }
-.modal {
+#sidebarOpen {
+    display: none;
+}
+[id*=mc] {
+    border-radius: 32px;
+}
+.bottom-notify {
 	display: none;
+	z-index: 4;
 	position: fixed;
-	z-index: 1;
-	left: 0;
-	top: 0;
+	bottom: 0;
 	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: rgb(0, 0, 0, 0.4);
-}
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 8px;
-    border: 1px solid #888;
-    width: 60%;
-}
-#sounds-manager-close {
-}
-ul.list {
-	margin: 0;
-	padding: 0;
-}
-ul.list li {
-	cursor: pointer;
-	position: relative;
-	padding: 12px 8px 12px 40px;
-	background: #eee;
-	font-size: 18px;
-	
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
-ul.list li:nth-child(odd) {
-	background: #f9f9f9;
-}
-ul.list li.checked {
-	background: #888;
-	color: #fff;
 }

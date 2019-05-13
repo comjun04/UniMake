@@ -8,8 +8,7 @@ module.exports = {
         }
     },
 	"env": {
-		"browser": true,
-		"jquery": true
+		"browser": true
 	},
     "rules": {
         // eslint recommended rules enabled
@@ -42,14 +41,14 @@ module.exports = {
         "dot-notation": 0,
         "eol-last": 0,
         "eqeqeq": 0,
-        "for-direction": 0,
+        "for-direction": "off", // 2
         "func-call-spacing": 0,
         "func-name-matching": 0,
         "func-names": 0,
         "func-style": 0,
         "function-paren-newline": 0,
         "generator-star-spacing": 0,
-        "getter-return": 0,
+        "getter-return": "off", // 2
         "global-require": 0,
         "guard-for-in": 0,
         "handle-callback-err": 0,
@@ -97,7 +96,7 @@ module.exports = {
         "no-compare-neg-zero": 2,
         "no-cond-assign": 2,
         "no-confusing-arrow": 0,
-        "no-console": 2,
+        "no-console": "off", // 2
         "no-const-assign": 2,
         "no-constant-condition": 2,
         "no-continue": 0,
