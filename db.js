@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		console.info("indexedDB support = true");
 		idbSupported = true;
 		
-		var dbOpenRequest = indexedDB.open("MyTestDataBase", 1);
+		var dbOpenRequest = indexedDB.open("MyTestDataBase", 2);
 		
 		dbOpenRequest.onupgradeneeded = function(e) {
 			console.log("Upgrading...");
@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
 			
 			if(!db.objectStoreNames.contains("info")) {
 				db.createObjectStore("info");
+			}
+			if(!db.objectStoreNames.contains("sounds")) {
+				db.createObjectStore("sounds", {autoIncrement: true});
 			}
 		}
 		
@@ -42,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		dbOpenRequest.onerror = function(e) {
 			console.error("Error");
 			console.dir(e);
+			notifyError(e.target.error);
 		}
 	}
 }, false);
@@ -114,5 +118,19 @@ function updatePackInfo(e) {
 	} catch(error) {
 		console.error("Error: " + error)
 		notifyError(error.name + ": " + error.message);
+	}
+}
+
+function addSound(sound) {
+	var transaction = db.transaction(['sounds'], "readwrite");
+	var store = transaction.objectStore('sounds');
+
+	var request = store.add(sound);
+	request.onerror = function(e) {
+		console.error(e.target.error);
+		notifyError(e.target.error.name);
+	}
+	request.onsuccess = function(e) {
+		notifyInfo("Sound Added!");
 	}
 }

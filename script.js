@@ -13,7 +13,14 @@ function sidebarClose() {
 var soundListAddBtn = document.getElementById('soundListAddBtn');
 var soundListInputFile = document.getElementById('soundListInputFile');
 soundListAddBtn.onclick = function () {
-
+	var audio = document.getElementById('soundListInputFile').files[0];
+	if(audio) { // NOT undefined
+		var fileReader = new FileReader();
+		fileReader.readAsArrayBuffer(audio);
+		fileReader.onload = function(e) {
+			addSound(e.target.result);
+		}
+	}
 }
 
 var buttonPressedX = 0;
