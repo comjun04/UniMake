@@ -128,11 +128,12 @@ body {
     grid-row: 2 / 2;
     grid-column: 1 / 1;
 }
+
 #sidebar {
- // display: inline-block;
     transition: width 0.5s;
     width: 0;
-    overflow: hidden;
+    overflow:
+     hidden;
 }
 .flex-container {
     display: flex;
@@ -166,4 +167,13 @@ body {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
+}
+.soundListItem {
+    position: relative;
+}
+.soundListItem i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 7px;
 }

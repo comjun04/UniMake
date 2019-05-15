@@ -18,11 +18,27 @@ soundListAddBtn.onclick = function () {
 		var fileReader = new FileReader();
 		fileReader.readAsArrayBuffer(audio);
 		fileReader.onload = function(e) {
-			addSound(e.target.result);
+			addSound(e.target.result, audio.name);
 		}
 	}
 }
 
+function soundListNewElement(name) {
+	var li = document.createElement("li");
+	li.className = "soundListItem";
+
+	var t = document.createTextNode(name);
+	li.appendChild(t);
+
+	var b = document.createElement("i");
+	b.className = "material-icons w3-button w3-blue";
+	b.innerHTML = "play_arrow";
+	li.appendChild(b);
+
+	document.getElementById('soundList').appendChild(li);
+}
+
+// sounds
 var buttonPressedX = 0;
 var buttonPressedY = 0;
 var buttonPressedMC = 0;

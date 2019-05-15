@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="w3.css" >
 <link rel="stylesheet" href="style.css">
 <link href="mobile.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <title>UniMake Web</title>
 </head>
 
@@ -146,8 +147,12 @@
       <br>
       <button class="w3-btn w3-blue w3-margin-top" id="soundListAddBtn">Add to List</button>
     </fieldset>
-    <ul class="list">
-      <li>test</li>
+    <ul id="soundList" class="w3-ul w3-border">
+      <li class="w3-light-gray soundListItem">
+        <span>test</span>
+        <i class="material-icons w3-button w3-blue">play_arrow</i>
+      </li>
+      <li class="w3-gray">test2</li>
     </ul>
   </div>
 </div>
@@ -176,5 +181,6 @@
 <script src="db.js"></script>
 <script src="notify.js"></script>
 <script src="audio.js"></script>
+<script src="lib/howler.core.min.js"></script>
 </body>
 </html>

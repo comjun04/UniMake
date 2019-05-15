@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function() {
 				db.createObjectStore("info");
 			}
 			if(!db.objectStoreNames.contains("sounds")) {
-				db.createObjectStore("sounds", {autoIncrement: true});
+				var store = db.createObjectStore("sounds", {autoIncrement: true});
+				store.createIndex("name", "name", {unique: true});
 			}
 		}
 		
@@ -32,14 +33,16 @@ document.addEventListener("DOMContentLoaded", function() {
 			console.info("Success!");
 			db = e.target.result;
 			
+			/*
 			db.onerror = function (event) {
 				alert("Database Error: " + event.target.errorCode);
 				console.error("Database Error: " + event.target.errorCode);
-}
+			} */
 			
 			document.querySelector("#packInfoSave").addEventListener("click", updatePackInfo, false);
 			
 			loadPack();
+			loadSoundList();
 		}
 		
 		dbOpenRequest.onerror = function(e) {
@@ -121,16 +124,50 @@ function updatePackInfo(e) {
 	}
 }
 
-function addSound(sound) {
+function addSound(sound, name) {
 	var transaction = db.transaction(['sounds'], "readwrite");
 	var store = transaction.objectStore('sounds');
 
-	var request = store.add(sound);
+	var obj = {
+		name: name,
+		file: sound
+	};
+
+	var request = store.add(obj);
 	request.onerror = function(e) {
 		console.error(e.target.error);
 		notifyError(e.target.error.name);
 	}
 	request.onsuccess = function(e) {
 		notifyInfo("Sound Added!");
+		soundListNewElement(name);
+	}
+}
+
+function loadSoundList() {
+	var transaction = db.transaction(['sounds'], "readonly");
+	var store = transaction.objectStore('sounds');
+
+	var cursor = store.openCursor();
+
+	var list = [];
+
+	cursor.onerror = function() {
+		console.error(e.target.error);
+		notifyError(e.target.error.name);
+	}
+	cursor.onsuccess = function(e) {
+		var result = e.target.result;
+		if(result) {
+			console.log("sound_key", result.key);
+			console.log("sound_value", result.value);
+			list.push(result.value);
+			result.continue();
+		} else { // EOF
+			console.log(list);
+			list.forEach(function(currentValue, index, array) {
+				soundListNewElement(currentValue.name);
+			});
+		}
 	}
 }
