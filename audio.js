@@ -1,5 +1,8 @@
 'use strict';
 
-function soundListPlay(name) {
-    
+function playAudio(audio) {
+    var obj = new Howl({
+        src: audio
+    });
+    obj.play();
 }

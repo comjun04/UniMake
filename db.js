@@ -171,3 +171,21 @@ function loadSoundList() {
 		}
 	}
 }
+
+function loadSound(name) {
+	return new Promise(function (resolve) {
+		var transaction = db.transaction(['sounds'], 'readonly');
+		var store = transaction.objectStore('sounds');
+		var index = store.index("name");
+
+		var request = index.get(name);
+
+		request.onerror = function(e) {
+			console.error(e.target.error);
+			notifyError(e.target.error.name);
+		}
+		request.onsuccess = function(e) {
+			resolve(e.target.result.file);
+		}
+	})
+}

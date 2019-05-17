@@ -16,7 +16,7 @@ soundListAddBtn.onclick = function () {
 	var audio = document.getElementById('soundListInputFile').files[0];
 	if(audio) { // NOT undefined
 		var fileReader = new FileReader();
-		fileReader.readAsArrayBuffer(audio);
+		fileReader.readAsDataURL(audio);
 		fileReader.onload = function(e) {
 			addSound(e.target.result, audio.name);
 		}
@@ -27,15 +27,24 @@ function soundListNewElement(name) {
 	var li = document.createElement("li");
 	li.className = "soundListItem";
 
-	var t = document.createTextNode(name);
+	var t = document.createElement('span');
+	var tt = document.createTextNode(name);
+	t.appendChild(tt);
 	li.appendChild(t);
 
 	var b = document.createElement("i");
 	b.className = "material-icons w3-button w3-blue";
 	b.innerHTML = "play_arrow";
+	b.addEventListener('click', function(){soundListPlay(this)}, false);
 	li.appendChild(b);
 
 	document.getElementById('soundList').appendChild(li);
+}
+
+function soundListPlay(obj) {
+	loadSound(obj.parentElement.children[0].textContent).then(function(audio){
+		playAudio(audio);
+	});
 }
 
 // sounds
