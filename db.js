@@ -150,8 +150,6 @@ function loadSoundList() {
 
 	var cursor = store.openCursor();
 
-	var list = [];
-
 	cursor.onerror = function() {
 		console.error(e.target.error);
 		notifyError(e.target.error.name);
@@ -161,11 +159,11 @@ function loadSoundList() {
 		if(result) {
 			console.log("sound_key", result.key);
 			console.log("sound_value", result.value);
-			list.push(result.value);
+			soundList.push(result.value);
 			result.continue();
 		} else { // EOF
-			console.log(list);
-			list.forEach(function(currentValue, index, array) {
+			console.log(soundList);
+			soundList.forEach(function(currentValue, index, array) {
 				soundListNewElement(currentValue.name);
 			});
 		}

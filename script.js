@@ -10,6 +10,8 @@ function sidebarClose() {
 }
 
 // soundList
+var soundList = [];
+var soundListPlaying = null;
 var soundListAddBtn = document.getElementById('soundListAddBtn');
 var soundListInputFile = document.getElementById('soundListInputFile');
 soundListAddBtn.onclick = function () {
@@ -45,6 +47,7 @@ function soundListPlay(obj) {
 	loadSound(obj.parentElement.children[0].textContent).then(function(audio){
 		playAudio(audio);
 	});
+	obj.textContent = "stop";
 }
 
 // sounds
