@@ -1,0 +1,30 @@
+{
+  "name": "unimake",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/comjun04/unimake",
+  "author": "My Name <comjun04@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack serve",
+    "build": "webpack -c webpack.config.prod.js",
+    "build:dev": "webpack"
+  },
+  "dependencies": {
+    "@stitches/react": "^1.2.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.4",
+    "webpack": "^5.62.1",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.4.0"
+  }
+}
