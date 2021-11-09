@@ -1,21 +1,23 @@
 import React from 'react'
-import { defaultCss } from './styles/theme'
+import { styled, defaultCss } from './styles/theme'
 
-import Header from './components/Header.jsx'
-import Pad from './components/Pad.jsx'
-import ModeSelectPanel from './components/ModeSelectPanel'
+import { Header, WorkPanel } from './components'
 
 import './css/font.css'
+
+const AppElement = styled('div', {
+  display: 'flex',
+  flexDirection: 'column'
+})
 
 const App = () => {
   defaultCss()
 
   return (
-    <>
+    <AppElement>
       <Header />
-      <Pad />
-      <ModeSelectPanel />
-    </>
+      <WorkPanel />
+    </AppElement>
   )
 }
 

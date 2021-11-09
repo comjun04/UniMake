@@ -11,9 +11,11 @@ const PadButtonElement = styled('button', {
   margin: '0.5%'
 })
 
-const PadButton = ({ id }) => {
+const PadButton = ({ id, onButtonClick }) => {
   return (
-    <PadButtonElement />
+    <PadButtonElement
+      onClick={() => onButtonClick(id)}
+    />
   )
 }
 

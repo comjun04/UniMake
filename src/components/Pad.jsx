@@ -9,10 +9,15 @@ const PadElement = styled('div', {
   padding: 10
 })
 
-const Pad = () => {
+const Pad = ({ onButtonClick }) => {
   const buttons = []
   for (let i = 1; i <= 64; i++) {
-    buttons.push(<PadButton id={i} />)
+    buttons.push(
+      <PadButton
+        id={i}
+        onButtonClick={onButtonClick}
+      />
+    )
   }
 
   return (

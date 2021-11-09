@@ -35,12 +35,13 @@ const ModeButton = ({ name, active, handleClick }) => {
   )
 }
 
-const ModeSelectPanel = () => {
+const ModeSelectPanel = ({ onModeChange }) => {
   const names = ['keySound', 'keyLED', 'autoplay']
   const [activeBtn, setActiveBtn] = useState(names[0])
 
   const btnClicked = (name) => {
     setActiveBtn(name)
+    onModeChange(name)
   }
 
   const buttons = names.map(name => (
