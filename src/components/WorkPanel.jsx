@@ -6,7 +6,7 @@ import ModeSelectPanel from './ModeSelectPanel.jsx'
 import PropertyEditPanel from './PropertyEditPanel.jsx'
 
 const PanelElement = styled('div', {
-  flexShrink: 0
+  flexShrink: 0,
 })
 
 const WorkPanel = () => {
