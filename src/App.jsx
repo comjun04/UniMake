@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { styled, defaultCss } from './styles/theme'
 
-import { Header, WorkPanel } from './components'
+import { Header, SideNav, WorkPanel } from './components'
 
 import './css/font.css'
 
-const AppElement = styled('div', {
+const AppComp = styled('div', {
   display: 'flex',
   flexDirection: 'column'
 })
@@ -13,11 +13,17 @@ const AppElement = styled('div', {
 const App = () => {
   defaultCss()
 
+  const [navOpened, setNavOpened] = useState(false)
+
   return (
-    <AppElement>
-      <Header />
+    <AppComp>
+      <Header triggerNavOpen={() => setNavOpened(true)} />
+      <SideNav
+        opened={navOpened}
+        triggerClose={() => setNavOpened(false)} 
+      />
       <WorkPanel />
-    </AppElement>
+    </AppComp>
   )
 }
 

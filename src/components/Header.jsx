@@ -1,15 +1,23 @@
 import React from 'react'
 import { styled } from '../styles/theme'
 
-const HeaderElement = styled('div', {
+const HeaderComp = styled('div', {
   width: '100%',
   height: 50,
   backgroundColor: 'cyan'
 })
 
-const Header = () => {
+const NavOpenBtn = styled('button', {
+  width: 50,
+  height: 50,
+  border: 0
+})
+
+const Header = ({ triggerNavOpen }) => {
   return (
-    <HeaderElement />
+    <HeaderComp>
+      <NavOpenBtn onClick={triggerNavOpen}>■</NavOpenBtn>
+    </HeaderComp>
   )
 }
 
