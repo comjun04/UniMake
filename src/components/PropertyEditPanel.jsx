@@ -5,10 +5,11 @@ const PanelElement = styled('div', {
   backgroundColor: '#cfcfcf',
 
   position: 'fixed',
-  width: '100%',
+  width: '90%',
   height: '100%',
-  padding: 16,
-  transition: 'top .4s'
+  margin: 0,
+  padding: '16px 5%',
+  transition: 'top .3s'
 })
 
 const Title = styled('h3', {
@@ -18,13 +19,22 @@ const Title = styled('h3', {
 })
 
 const CloseBtn = styled('a', {
+  backgroundColor: 'red',
+
   position: 'absolute',
   top: 10,
   right: 10,
+  padding: '5px 10px',
+  fontSize: 25,
   textDecoration: 'none'
 })
 
-const PropertyEditPanel = ({ mode, button, show }) => {
+const PropertyEditPanel = ({
+  mode,
+  button,
+  show,
+  triggerHide
+}) => {
   let element
 
   const title = mode
@@ -36,6 +46,7 @@ const PropertyEditPanel = ({ mode, button, show }) => {
       }}
     >
       <Title>{title} 편집</Title>
+      <CloseBtn onClick={triggerHide}>&times;</CloseBtn>
       {element}
     </PanelElement>
   )

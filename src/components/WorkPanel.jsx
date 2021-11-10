@@ -21,6 +21,9 @@ const WorkPanel = () => {
     setSelectedBtn(buttonId)
     setShowPropertyPanel(true)
   }
+  const hideProperties = () => {
+    setShowPropertyPanel(false)
+  }
 
   return (
     <PanelElement>
@@ -30,6 +33,7 @@ const WorkPanel = () => {
         mode={mode}
         button={selectedBtn}
         show={showPropertyPanel}
+        triggerHide={hideProperties}
       />
     </PanelElement>
   )
