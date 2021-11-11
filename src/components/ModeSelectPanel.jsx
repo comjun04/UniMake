@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { styled } from '../styles/theme'
 
-const PanelElement = styled('div', {
+const names = ['keySound', 'keyLED', 'autoplay']
+
+/* const PanelElement = styled('div', {
   backgroundColor: 'teal',
 
   width: '100%'
   // height: '20%' // TODO: this will be flex'ed
-})
+}) */
 
 const ButtonElement = styled('button', {
   backgroundColor: '#c0ffee',
@@ -35,12 +37,8 @@ const ModeButton = ({ name, active, handleClick }) => {
   )
 }
 
-const ModeSelectPanel = ({ onModeChange }) => {
-  const names = ['keySound', 'keyLED', 'autoplay']
-  const [activeBtn, setActiveBtn] = useState(names[0])
-
+const ModeSelectPanel = ({ selected, onModeChange }) => {
   const btnClicked = (name) => {
-    setActiveBtn(name)
     onModeChange(name)
   }
 
@@ -48,7 +46,7 @@ const ModeSelectPanel = ({ onModeChange }) => {
     <ModeButton
       name={name}
       key={name.toString()}
-      active={activeBtn === name}
+      active={selected === name}
       handleClick={btnClicked}
     />
   ))

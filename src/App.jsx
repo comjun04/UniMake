@@ -25,7 +25,9 @@ const App = () => {
         activeItem={activeNavItem}
         setActiveItem={setActiveNavItem}
       />
-      <WorkPanel />
+      <WorkPanel
+        page={activeNavItem}
+      />
     </AppComp>
   )
 }

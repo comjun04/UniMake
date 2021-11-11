@@ -5,11 +5,15 @@ import Pad from './Pad.jsx'
 import ModeSelectPanel from './ModeSelectPanel.jsx'
 import PropertyEditPanel from './PropertyEditPanel.jsx'
 
-const PanelElement = styled('div', {
-  flexShrink: 0,
-})
+import SoundManagerPanel from './SoundManagerPanel.jsx'
 
-const WorkPanel = () => {
+const PanelElement = styled('div', {
+    flexShrink: 0,
+  })
+
+const WorkPanel = ({ page }) => {
+  
+
   const [mode, setMode] = useState('keySound')
   const [selectedBtn, setSelectedBtn] = useState(0)
   const [showPropertyPanel, setShowPropertyPanel] = useState(false)
@@ -25,18 +29,24 @@ const WorkPanel = () => {
     setShowPropertyPanel(false)
   }
 
-  return (
-    <PanelElement>
-      <Pad onButtonClick={showProperties} />
-      <ModeSelectPanel onModeChange={changeMode} />
-      <PropertyEditPanel
-        mode={mode}
-        button={selectedBtn}
-        show={showPropertyPanel}
-        triggerHide={hideProperties}
-      />
-    </PanelElement>
-  )
+  if (page === 'pad') {
+    return (
+      <PanelElement>
+        <Pad onButtonClick={showProperties} />
+        <ModeSelectPanel selected={mode} onModeChange={changeMode} />
+        <PropertyEditPanel
+          mode={mode}
+          button={selectedBtn}
+          show={showPropertyPanel}
+          triggerHide={hideProperties}
+        />
+      </PanelElement>
+    )
+  } else if (page === 'sounds') {
+    return (
+      <SoundManagerPanel />
+    )
+  }
 }
 
 export default WorkPanel
