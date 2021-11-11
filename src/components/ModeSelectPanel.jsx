@@ -47,6 +47,7 @@ const ModeSelectPanel = ({ onModeChange }) => {
   const buttons = names.map(name => (
     <ModeButton
       name={name}
+      key={name.toString()}
       active={activeBtn === name}
       handleClick={btnClicked}
     />

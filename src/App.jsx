@@ -14,13 +14,16 @@ const App = () => {
   defaultCss()
 
   const [navOpened, setNavOpened] = useState(false)
+  const [activeNavItem, setActiveNavItem] = useState('pad')
 
   return (
     <AppComp>
       <Header triggerNavOpen={() => setNavOpened(true)} />
       <SideNav
         opened={navOpened}
-        triggerClose={() => setNavOpened(false)} 
+        triggerClose={() => setNavOpened(false)}
+        activeItem={activeNavItem}
+        setActiveItem={setActiveNavItem}
       />
       <WorkPanel />
     </AppComp>

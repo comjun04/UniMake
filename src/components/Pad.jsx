@@ -15,6 +15,7 @@ const Pad = ({ onButtonClick }) => {
     buttons.push(
       <PadButton
         id={i}
+        key={i.toString()}
         onButtonClick={onButtonClick}
       />
     )
