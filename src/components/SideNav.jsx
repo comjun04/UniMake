@@ -1,6 +1,17 @@
 import React from 'react'
 import { styled } from '../styles/theme'
 
+const items = [
+  {
+    id: 'pad',
+    text: '패드'
+  },
+  {
+    id: 'sounds',
+    text: '사운드 관리'
+  }
+]
+
 const SideNavComp = styled('div', {
   backgroundColor: 'white',
 
@@ -50,38 +61,37 @@ const ListItemComp = styled('li', {
   margin: 0,
   padding: 16,
 })
-const ListItem = ({ text, active, setActiveItem }) => {
+const ListItem = ({ text, active, onClick }) => {
   return (
     <ListItemComp
       css={{
         backgroundColor: active ? 'lightblue' : 'lightgrey'
       }}
-      onClick={setActiveItem}
+      onClick={onClick}
     >
       {text}
     </ListItemComp>
   )
 }
 
-const SideNav = ({ opened, triggerClose, activeItem, setActiveItem }) => {
-  const items = [
-    {
-      id: 'pad',
-      text: '패드'
-    },
-    {
-      id: 'sounds',
-      text: '소리 관리'
-    }
-  ]
-  const listItems = items.map((item) => 
+const SideNav = ({
+  opened,
+  triggerClose,
+  activeItem,
+  setActiveItem
+}) => {
+  const onListItemClick = (id) => {
+    setActiveItem(id)
+    triggerClose()
+  }
+  const listItems = items.map((item) => (
     <ListItem
       key={item.id}
       text={item.text}
       active={activeItem === item.id}
-      setActiveItem={() => setActiveItem(item.id)}
+      onClick={() => onListItemClick(item.id)}
     />
-  )
+  ))
 
   return (
     <SideNavComp
